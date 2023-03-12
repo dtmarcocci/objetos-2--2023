@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class Tiempo {
 
-	LocalDate today ;
+	private LocalDate today ;
 	
 	
 	

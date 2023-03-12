@@ -6,7 +6,7 @@ import java.util.Locale;
 
 public class Tiempo {
 
-	LocalDate today;
+	private LocalDate today;
 
 	public Tiempo(LocalDate today) {
 		super();
