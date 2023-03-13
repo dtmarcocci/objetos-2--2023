@@ -30,5 +30,8 @@ public class Participante {
 	public void setPuntos(int puntos) {
 		this.puntos = puntos;
 	}
+	public boolean iscontestSignIn(Concurso concurso) {
+		return this.concursos.contains(concurso);
+	}
 
 }

@@ -2,6 +2,7 @@ package domain;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Objects;
 
 public class Concurso {
 	private LocalDate initialDate;
@@ -38,6 +39,18 @@ public class Concurso {
 		}
 		this.participantes.add(participante);
 
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Concurso other = (Concurso) obj;
+		return finishDate.isEqual(other.finishDate) && initialDate.isEqual(other.initialDate);
 	}
 
 }
