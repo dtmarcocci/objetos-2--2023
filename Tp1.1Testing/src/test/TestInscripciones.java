@@ -1,6 +1,7 @@
 package test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -51,6 +52,7 @@ public class TestInscripciones {
 		// exercise
 		try {
 			Inscripciones.contestsSignIn(participante, concurso);
+			fail();
 		} catch (RuntimeException ex) {
 			valorObtenido = ex.getMessage();
 		}
@@ -58,10 +60,10 @@ public class TestInscripciones {
 		assertEquals(valorObtenido, valorEsperado);
 
 	}
-	
-	
-	/* Respuesta a ¿Los test que escribio funcionan siempre? 
-	 * Van a funcionar siempre y cuando el valor obtenido sea igual al valor esperado
+
+	/*
+	 * Respuesta a ¿Los test que escribio funcionan siempre? Van a funcionar siempre
+	 * y cuando el valor obtenido sea igual al valor esperado
 	 */
 
 }

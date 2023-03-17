@@ -24,7 +24,7 @@ public class Concurso {
 		this.participantes = participantes;
 	}
 
-	public void isActive() {
+	private void isActive() {
 		if (initialDate.isAfter(LocalDate.now()) || finishDate.isBefore(LocalDate.now())) {
 			throw new RuntimeException("La Campania no esta Vigente");
 		}
