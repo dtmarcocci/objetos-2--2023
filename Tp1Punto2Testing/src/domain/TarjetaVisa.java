@@ -2,21 +2,23 @@ package domain;
 
 public class TarjetaVisa extends Tarjeta {
 
-	private float descuento;
+	private double descuento;
 
-	public TarjetaVisa(String nombre, float descuento) {
+	public TarjetaVisa(String nombre,double descuento) {
 		super(nombre);
 		this.descuento = descuento;
+
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
-	public float pagar(Pedido pedido) {
+	public double pagar(Pedido pedido, double propina) {
 		// TODO Auto-generated method stub
 
-		float descuento = pedido.costoTotalBebidas() - (pedido.costoTotalBebidas() * this.descuento);
+		double pago = (pedido.costoTotal() * propina) + pedido.costoTotal()
+				- (pedido.costoTotalBebidas() * this.descuento);
 
-		return descuento;
+		return pago;
 	}
 
 }

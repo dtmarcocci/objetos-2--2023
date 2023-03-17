@@ -2,15 +2,15 @@ package domain;
 
 public class TarjetaViedma extends Tarjeta {
 
-	public TarjetaViedma(String nombre, double descuento) {
-		super(nombre, descuento);
-		// TODO Auto-generated constructor stub
+	public TarjetaViedma(String nombre) {
+		super(nombre);
+
 	}
 
 	@Override
-	float pagar(Pedido pedido) {
-		// TODO Auto-generated method stub
-		return 0;
+	double pagar(Pedido pedido, double propina) {
+		double pago = (pedido.costoTotal() * propina) + pedido.costoTotal();
+		return pago;
 	}
 
 }

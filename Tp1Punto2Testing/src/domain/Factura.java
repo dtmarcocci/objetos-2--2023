@@ -2,17 +2,21 @@ package domain;
 
 public class Factura {
 
+	private Comensal comensal;
 	private Pedido pedido;
-	private float precioSinDescuento;
-	private float precioConDescuento;
+	private double precioInicial;
+	private double precioFinal;
 
-	public Factura(Pedido pedido) {
+	public Factura(Comensal comensal,Pedido pedido, double precioInicial, double precioFinal) {
 		super();
 		this.pedido = pedido;
+		this.comensal=comensal;
+		this.precioInicial = precioInicial;
+		this.precioFinal = precioFinal;
 	}
 
-	public void precioFinal(Tarjeta tarjeta) {
-
+	public double precioFinal() {
+		return this.precioFinal;
 	}
 
 }

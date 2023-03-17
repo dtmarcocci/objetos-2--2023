@@ -1,11 +1,11 @@
 package domain;
 
-public abstract class ItemDeMenu {
+public class ItemDeMenu {
 
 	private String descripcion;
-	private float price;
+	private double price;
 
-	public ItemDeMenu(String descripcion, float price) {
+	public ItemDeMenu(String descripcion, double price) {
 		super();
 		this.descripcion = descripcion;
 		this.price = price;
@@ -15,9 +15,8 @@ public abstract class ItemDeMenu {
 		return descripcion;
 	}
 
-	float price() {
+	double price() {
 		return this.price;
 	}
-	abstract String tipo();
 
 }

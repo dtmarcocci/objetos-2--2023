@@ -4,18 +4,26 @@ import java.util.List;
 
 public class Pedido {
 
-	private List<ItemDeMenu> items;
+	private Mesa mesa;
+	private List<ItemDeMenu> platosPrincipales;
+	private List<ItemDeMenu> bebidas;
 
-	public Pedido(List<ItemDeMenu> items) {
+	public Pedido(Mesa mesa, List<ItemDeMenu> platosPrincipales, List<ItemDeMenu> bebidas) {
 		super();
-		this.items = items;
+		this.mesa = mesa;
+		this.platosPrincipales = platosPrincipales;
+		this.bebidas = bebidas;
 
 	}
 
-	float costoTotal() {
+	double costoTotal() {
 
-		float costo = 0;
-		for (ItemDeMenu i : this.items) {
+		return this.costoTotalBebidas() + this.costoTotalPlatoPrincipal();
+	}
+
+	double costoTotalBebidas() {
+		double costo = 0;
+		for (ItemDeMenu i : this.bebidas) {
 
 			costo = costo + i.price();
 
@@ -23,22 +31,12 @@ public class Pedido {
 		return costo;
 	}
 
-	float costoTotalBebidas() {
-		float costo = 0;
-		for (ItemDeMenu i : this.items) {
-			if (i.tipo() == "Bebida") {
-				costo = costo + i.price();
-			}
-		}
-		return costo;
-	}
+	double costoTotalPlatoPrincipal() {
+		double costo = 0;
+		for (ItemDeMenu i : this.platosPrincipales) {
 
-	float costoTotalPlatoPrincipal() {
-		float costo = 0;
-		for (ItemDeMenu i : this.items) {
-			if (i.tipo() == "Plato Principal") {
-				costo = costo + i.price();
-			}
+			costo = costo + i.price();
+
 		}
 		return costo;
 	}
