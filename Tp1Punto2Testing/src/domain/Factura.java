@@ -1,22 +1,28 @@
 package domain;
 
+import java.time.LocalDateTime;
+
 public class Factura {
 
-	private Comensal comensal;
+	@SuppressWarnings("unused")
 	private Pedido pedido;
-	private double precioInicial;
-	private double precioFinal;
+	@SuppressWarnings("unused")
+	private double costoInicial;
+	@SuppressWarnings("unused")
+	private double costoFinal;
+	@SuppressWarnings("unused")
+	private LocalDateTime fecha;
 
-	public Factura(Comensal comensal,Pedido pedido, double precioInicial, double precioFinal) {
+	public Factura(Pedido pedido, double costoInicial, double costoFinal) {
 		super();
 		this.pedido = pedido;
-		this.comensal=comensal;
-		this.precioInicial = precioInicial;
-		this.precioFinal = precioFinal;
+		this.costoInicial = costoInicial;
+		this.costoFinal = costoFinal;
+		this.fecha = LocalDateTime.now();
 	}
 
-	public double precioFinal() {
-		return this.precioFinal;
+	double costoFinal() {
+		return costoFinal;
 	}
 
 }

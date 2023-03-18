@@ -2,16 +2,13 @@ package domain;
 
 public abstract class Tarjeta {
 
-	protected String nombre;
-	
+	protected double descuento;
 
-	public Tarjeta(String nombre) {
+	public Tarjeta(double descuento) {
 		super();
-		this.nombre = nombre;
-		
-
+		this.descuento = descuento;
 	}
 
-	abstract double pagar(Pedido pedido, double propina);
+	protected abstract double pagar(double precioBebidas, double precioPlatos, double propina);
 
 }

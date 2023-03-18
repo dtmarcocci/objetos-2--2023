@@ -2,21 +2,17 @@ package domain;
 
 public class TarjetaVisa extends Tarjeta {
 
-	private double descuento;
-
-	public TarjetaVisa(String nombre,double descuento) {
-		super(nombre);
-		this.descuento = descuento;
-
+	public TarjetaVisa(double descuento) {
+		super(descuento);
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
-	public double pagar(Pedido pedido, double propina) {
+	protected double pagar(double precioBebidas, double precioPlatos, double propina) {
 		// TODO Auto-generated method stub
 
-		double pago = (pedido.costoTotal() * propina) + pedido.costoTotal()
-				- (pedido.costoTotalBebidas() * this.descuento);
+		double pago = ((precioBebidas + precioPlatos) * propina) + ((precioBebidas + precioPlatos))
+				- (precioBebidas * this.descuento);
 
 		return pago;
 	}
