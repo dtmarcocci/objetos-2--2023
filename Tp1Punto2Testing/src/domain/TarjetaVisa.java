@@ -13,7 +13,7 @@ public class TarjetaVisa extends Tarjeta {
 
 		double pago = ((precioBebidas + precioPlatos) * propina) + ((precioBebidas + precioPlatos))
 				- (precioBebidas * this.descuento);
-
+		
 		return pago;
 	}
 
